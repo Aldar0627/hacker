@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="mn">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,7 @@
             margin: 50px;
         }
         .container {
-            background: white;
+            background: rgb(0, 255, 255, 0.404);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -44,13 +43,28 @@
             font-weight: bold;
             color: #333;
         }
+        .navbar  {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255, 0.7);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgb(0, 0, 0, 0.2);
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h2>Mass</h2>
-        <p>F = m × a → m = F / a</p>
 
         <label for="force">force (N):</label>
         <input type="number" id="force" placeholder="for example: 10">
@@ -78,9 +92,11 @@
             resultDiv.innerHTML = "Масс = " + mass.toFixed(2) + " кг";
         }
     </script>
-<a href="home page.html">home</a><br>
-<a href="hacker.html">Speed</a><br>
-<a href="RUSSIA.html">Distance</a><br>
-<a href="wuah.html">Time</a><br>
+    <div class="navbar">
+<a href="hacker.html">Speed</a>
+<a href="RUSSIA.html">Distance</a>
+<a href="wuah.html">Time</a>
+<a href="index.html">home</a>
+    </div>
 </body>
 </html>
