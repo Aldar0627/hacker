@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физикийн бодлого</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="problem">Түр хүлээнэ үү...</h2>
+        <input type="number" id="answer" placeholder="Хариу">
+        <br>
+        <button onclick="checkAnswer()">Шалгах</button>
+        <button onclick="generateProblem()">Шинэ бодлого</button>
+        <p id="result"></p>
+        <p id="solution"></p>
+    </div>
+    <script>
+    let correctAnswer, formula;
+
+    function generateProblem() {
+        let type = Math.floor(Math.random() * 3);  // Одоо 3 төрлийн бодлого л байна
+        let a = Math.floor(Math.random() * 100) + 1;
+        let b = Math.floor(Math.random() * 20) + 1;
+
+        if (type === 0) {
+            document.getElementById("problem").innerText = `Хэрэв би ${a} км замыг ${b} цагт туулбал, миний хурд хэд байх вэ?`;
+            correctAnswer = (a / b).toFixed(2);
+            formula = "Хурд = Зай / Цаг";
+        } else if (type === 1) {
+            document.getElementById("problem").innerText = `Хэрэв би ${a} км/ц хурдтай явбал, ${b} цагийн дараа хэдэн км зам туулах вэ?`;
+            correctAnswer = (a * b).toFixed(2);
+            formula = "Зай = Хурд × Цаг";
+        } else {
+            document.getElementById("problem").innerText = `Хэрэв ${a} кг масстай биет ${b} м/с² хурдаар хурдасвал хүч хэд байх вэ?`;
+            correctAnswer = (a * b).toFixed(2);
+            formula = "Хүч = Масc × Хурдатгал";
+        }
+
+        document.getElementById("answer").value = "";
+        document.getElementById("result").innerText = "";
+        document.getElementById("solution").innerText = "";
+    }
+
+    function checkAnswer() {
+        let userAnswer = parseFloat(document.getElementById("answer").value); // Хэрэглэгчийн хариултыг тоонд хөрвүүлэх
+        let resultElem = document.getElementById("result");
+        let solutionElem = document.getElementById("solution");
+
+        if (userAnswer === parseFloat(correctAnswer)) {  // Хариултыг тооны хэлбэрт харьцуулах
+            resultElem.innerText = "Зөв!";
+            resultElem.style.color = "green";
+            solutionElem.innerText = "";
+        } else {
+            resultElem.innerText = "Буруу!";
+            resultElem.style.color = "red";
+            solutionElem.innerText = `Зөв бодох арга: ${formula}`;
+        }
+    }
+
+    window.onload = generateProblem;
+</script>
+<a href="home page.html">Back to home page</a>
+</body>
+</html>
