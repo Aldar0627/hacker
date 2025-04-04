@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('road_background.jpg'); 
+            background-image: url('road_background.jpg'); /* Замын фон зураг */
             background-size: cover;
             background-position: center;
             display: flex;
@@ -16,7 +16,7 @@
             margin: 0;
         }
         .container {
-            background-color: rgba(cyan);
+            background-color: rgba(0, 255, 255, 0.404);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -50,6 +50,22 @@
             font-weight: bold;
             margin: 20px 0;
         }
+        .navbar  {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(255, 255, 255, 0.7);
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgb(0, 0, 0, 0.2);
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -76,12 +92,12 @@
         }
     }
 </script>
-<li>
-<a href="hacker.html">speed</a><br>
-<a href="wuah.html">time</a><br>
-<a href="home page.html">home</a><br>
-<a href="test ig.html">Mass</a><br>
-</li>
+<div class="navbar">
+<a href="hacker.html">speed</a>
+<a href="wuah.html">time</a>
+<a href="test ig.html">Mass</a>
+<a href="index.html">home</a>
+</div>
 </body>
 </html>
 
