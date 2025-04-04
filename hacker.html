@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed, Distance, Time, Mass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('road_background.jpg'); /* Замын фон зураг */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .container input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+        .container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .divider {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Distance</div>
+        <input type="text" id="distance" placeholder="Enter Distance(km)">
+        <div class="divider">÷</div>
+        <div class="title">Time</div>
+        <input type="text" id="time" placeholder="Enter Time(hour)">
+        <div class="divider">=</div>
+        <div class="title">Speed</div>
+        <p id="speed"></p>
+        <br>
+        <button onclick="calculateSpeed()">Calculate Speed</button>
+    </div><script>
+    function calculateSpeed() {
+        const distance = document.getElementById("distance").value;
+        const time = document.getElementById("time").value;
+        if (distance && time && time != 0) {
+            const speed = distance / time;
+            document.getElementById("speed").innerHTML = speed.toFixed(2) + " km/h";
+        } else {
+            alert("Please enter valid numbers!");
+        }
+    }
+</script>
+<li>
+<a href="wuah.html">time</a><br>
+<a href="RUSSIA.html">distance</a><br>
+<a href="home page.html">home</a><br>
+<a href="test ig.html">Mass</a><br>
+</li>
+</body>
+</html>  

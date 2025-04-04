@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed, Distance, Time, Mass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Mass</h2>
+        <p>F = m × a → m = F / a</p>
+
+        <label for="force">force (N):</label>
+        <input type="number" id="force" placeholder="for example: 10">
+
+        <label for="acceleration">acceleration (м/с²):</label>
+        <input type="number" id="acceleration" placeholder="for example: 2">
+
+        <button onclick="calculateMass()">Find mass</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateMass() {
+            let force = parseFloat(document.getElementById("force").value);
+            let acceleration = parseFloat(document.getElementById("acceleration").value);
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(force) || isNaN(acceleration) || acceleration === 0) {
+                resultDiv.innerHTML = "Алдаа: Зөв утга оруулна уу!";
+                return;
+            }
+
+            let mass = force / acceleration;
+            resultDiv.innerHTML = "Масс = " + mass.toFixed(2) + " кг";
+        }
+    </script>
+<a href="home page.html">home</a><br>
+<a href="hacker.html">Speed</a><br>
+<a href="RUSSIA.html">Distance</a><br>
+<a href="wuah.html">Time</a><br>
+</body>
+</html>
